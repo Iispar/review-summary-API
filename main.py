@@ -8,12 +8,18 @@ api = Api(app);
 
 class Review(Resource):
     def get(self):
-        reviews = request.json['reviews'];
-        res = getReviews(reviews);
-        print(res);
+        try:
+            reviews = request.json['reviews'];
+        except:
+            return 'bad request', 400;
+        try:
+            res = getReviews(reviews);
+        except:
+            return 'Fail whilst calculating reviews', 404;
         return res;
+        
 
-api.add_resource(Review, '/')
+api.add_resource(Review, '/rate')
 
 if __name__ == '__main__':
     app.run();

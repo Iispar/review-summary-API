@@ -1,9 +1,12 @@
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 
 def getReviews(reviews):
-    MODEL_NAME = 'Iiro/bert_reviews';
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME);
-    model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME);
+    try:
+        MODEL_NAME = 'Iiro/bert_reviews';
+        tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME);
+        model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME);
+    except:
+        raise Exception('couldn\' find model')
 
     pipe = pipeline(
         'text-classification',
@@ -13,6 +16,10 @@ def getReviews(reviews):
     )
 
     prompt = reviews;
-    res = pipe(prompt);
+
+    try:
+        res = pipe(prompt);
+    except:
+        raise Exception('Pipeline Failed')
 
     return res

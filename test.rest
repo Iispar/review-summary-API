@@ -1,0 +1,12 @@
+get http://127.0.0.1:5000/
+content-type: application/json
+
+{
+    "reviews": ["I hate this",
+                "this is the best chainsaw ever",
+                "it broke after five uses",
+                "i have never used something so durable",
+                "i have been using this daily since forever",
+                "it was okay",
+                "i have seen some better items like the mongel"]
+}

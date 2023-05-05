@@ -1,6 +1,6 @@
 # review-summary-backend
 
-This is the API for my reviews application. It includes the training of my two models and the small Flask API that I created so that I can call the model from the backend.
+This is the API for my reviews application. It includes the training of my two models and the small Flask API that I created so that I can call the model from the backend. The API also includes top word calculation with TF-IDF and returns the top most imiportant words.
 
 ## !!
 
@@ -10,7 +10,7 @@ If you would like to know more about the project for example training, why I mad
 
 The application uses natural language processing to process reviews and rate them on a scale from 1-5 as an sentiment to the review. I created two different models one that you can find from the colab file [model.ipynb](https://github.com/Iispar/review-summary-API/blob/main/model.ipynb) that is a basic model that I created myself from start to end and the other one is a finetuned BERT model that you can find in [BERT-finetuned-model](https://github.com/Iispar/review-summary-API/blob/main/BERT-finetuned-model.ipynb). The finetuned BERT model achieved naturally better results so it is the one that is used in the backend.
 
-In addition to this I also used some basic data processing and TF-IDF to calculate the top words with most importace to the reviews.
+In addition to this I also used some basic data processing and TF-IDF to calculate the top words with most importace to the reviews. 
 
 Then I created a really simple API in Flask so that I can easily make a call to an endpoint and get to use the model.
 

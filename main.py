@@ -9,10 +9,12 @@ api = Api(app);
 class Review(Resource):
     def get(self):
         try:
+            # get reviews from the call. If no reviews then return 400.
             reviews = request.json['reviews'];
         except:
             return 'bad request', 400;
         try:
+            # get ratings for reviews and also most common words.
             res = getReviews(reviews);
         except:
             return 'Fail whilst calculating reviews', 404;

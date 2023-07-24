@@ -25,4 +25,4 @@ class Review(Resource):
 api.add_resource(Review, '/rate')
 
 if __name__ == '__main__':
-    app.run();
+    app.run(port="8000");

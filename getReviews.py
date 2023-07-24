@@ -55,12 +55,12 @@ def getTopWords(stars, reviews):
 
     try:
         # calculate the positive and negative words.
-        negWords = get_tfidf_top_features(neg, 20);
-        posWords = get_tfidf_top_features(pos, 20);
+        negWords = get_tfidf_top_features(neg, 10);
+        posWords = get_tfidf_top_features(pos, 10);
     # not enought words so we just return empty.
     except:
-        negWords = "not enough words",
-        posWords = "not enough words"
+        negWords = ["not enough words"],
+        posWords = ["not enough words"]
     # return the words.
     return {'negWords': negWords, 'posWords': posWords}
 
@@ -83,8 +83,9 @@ def createRes(reviews, stars, topWords):
     # loop all reviews and create a list of json objects with
     # the rating and its stars.
     for i in range(len(reviews)):
+        star = int(stars[i]['label'].split('_')[1]) + 1
         listOfReviews.append({'review': reviews[i],
-                              'stars': stars[i]})
+                              'star': star})
     # return reviews and also the top words.
     res = {'reviews': listOfReviews,
            'topNeg': topWords['negWords'],

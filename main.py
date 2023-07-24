@@ -1,13 +1,14 @@
 from flask import Flask
 from flask import request
 from flask_restful import Resource, Api
+
 from getReviews import getReviews
 
 app = Flask('ReviewsAPI');
 api = Api(app);
 
 class Review(Resource):
-    def get(self):
+    def post(self):
         try:
             # get reviews from the call. If no reviews then return 400.
             reviews = request.json['reviews'];

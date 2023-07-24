@@ -1,4 +1,4 @@
-get http://127.0.0.1:5000/rate
+POST http://127.0.0.1:5000/rate
 content-type: application/json
 
 {

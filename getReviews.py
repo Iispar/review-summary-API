@@ -57,12 +57,14 @@ def getTopWords(stars, reviews):
         # calculate the positive and negative words.
         negWords = get_tfidf_top_features(neg, 20);
         posWords = get_tfidf_top_features(pos, 20);
+    # not enought words so we just return empty.
     except:
-        raise Exception('Failure with tfidf')
+        negWords = "not enough words",
+        posWords = "not enough words"
     # return the words.
     return {'negWords': negWords, 'posWords': posWords}
 
-def get_tfidf_top_features(documents,n_top=10):
+def get_tfidf_top_features(documents,n_top=5):
   # load the vectorizer.
   vectorizer = TfidfVectorizer(max_df=0.95, min_df=2,  stop_words='english')
   # fit the vectorizer with our reviews
@@ -87,5 +89,4 @@ def createRes(reviews, stars, topWords):
     res = {'reviews': listOfReviews,
            'topNeg': topWords['negWords'],
            'topPos': topWords['posWords']}
-
     return res;

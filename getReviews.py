@@ -1,25 +1,16 @@
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+import requests
+
+API_URL = "https://api-inference.huggingface.co/models/Iiro/bert_reviews"
+headers = {"Authorization": "Bearer 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"}
+
+def query(payload):
+	response = requests.post(API_URL, headers=headers, json=payload)
+	return response.json()
 
 def getReviews(reviews):
-     # load the model
-    MODEL_NAME = 'Iiro/bert_reviews';
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME);
-    model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME);
-
-    # set the pipeline
-    pipe = pipeline(
-        'text-classification',
-        model=model,
-        tokenizer=tokenizer,
-        device=model.device
-    )
-
-    # get reviews.
-    prompt = reviews;
-
     try:
         # calculate the stars
-        stars = pipe(prompt);
+        stars = requests.post(API_URL, headers=headers, json=reviews).json()
     except:
         raise Exception('Pipeline Failed')
     
@@ -36,7 +27,8 @@ def createRes(reviews, stars):
     # loop all reviews and create a list of json objects with
     # the rating and its stars.
     for i in range(len(reviews)):
-        star = int(stars[i]['label'].split('_')[1]) + 1
+        maxVal = max(stars[i], key=lambda x:x['score'])
+        star = int(maxVal['label'].split('_')[1]) + 1
         listOfReviews.append({'review': reviews[i],
                               'star': star})
     # return reviews and also the top words.

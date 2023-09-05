@@ -1,6 +1,4 @@
 flask
 flask-restful
-transformers
 scikit-learn
-torch
 gunicorn

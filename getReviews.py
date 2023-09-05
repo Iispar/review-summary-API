@@ -1,11 +1,10 @@
 import requests
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 API_URL = "https://api-inference.huggingface.co/models/Iiro/bert_reviews"
-headers = {"Authorization": "Bearer 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"}
-
-def query(payload):
-	response = requests.post(API_URL, headers=headers, json=payload)
-	return response.json()
+headers = {"Authorization": os.getenv('AUTHORIZATION')}
 
 def getReviews(reviews):
     try:

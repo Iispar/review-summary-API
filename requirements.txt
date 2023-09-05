@@ -2,3 +2,5 @@ flask
 flask-restful
 scikit-learn
 gunicorn
+requests
+python-dotenv

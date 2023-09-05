@@ -19,5 +19,14 @@ Then I created a really simple API in Flask so that I can easily make a call to 
 The model uses HuggingFaces dataset [amazon-reviews-multi](https://huggingface.co/datasets/amazon_reviews_multi/viewer/en/train) for training. The training is done in Python with the help of a few libraries like sklearn, torch, transformers, numpy and optuna. For the API I used Python with Flask. To know more about the training please refer to the document (COMING SOON).
 
 ## Using
-
-The usage of the app should be really simple. Just clone the repository and run the main.py file and it opens the API locally. There is a test file test.rest that can be used to make a API call to the API. Just make sure the address is correct!
+There will be a dockerfile later here but currently you can run the application as follows: <br />
+Before using you need to install the following with pip in the command line:
+```
+pip install flask
+pip install flask-restful
+pip install scikit-learn
+pip install requests
+pip install python-dotenv
+```
+And you will need the API key for the huggingface model from me. Please contact me so I can give you this and all other secret keys with instructions on using them.
+The usage of the app after this should be really simple. Just clone the repository and run the app.py file or from the command line run ```flask run``` and it opens the API locally. There is a test file test.rest that can be used to make a API call to the API. Just make sure the address is correct!

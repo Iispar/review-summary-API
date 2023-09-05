@@ -15,11 +15,10 @@ class Review(Resource):
             reviews = request.json['reviews'];
         except:
             return 'bad request', 400;
-        try:
+
             # get ratings for reviews and also most common words.
-            res = getReviews(reviews);
-        except:
-            return 'Fail whilst calculating reviews', 404;
+        res = getReviews(reviews);
+
         return res;
         
 

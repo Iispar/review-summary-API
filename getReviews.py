@@ -1,13 +1,10 @@
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 
 def getReviews(reviews):
-    try:
-        # load the model
-        MODEL_NAME = 'Iiro/bert_reviews';
-        tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME);
-        model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME);
-    except:
-        raise Exception('couldn\' find model')
+     # load the model
+    MODEL_NAME = 'Iiro/bert_reviews';
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME);
+    model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME);
 
     # set the pipeline
     pipe = pipeline(

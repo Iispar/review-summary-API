@@ -19,7 +19,8 @@ Then I created a really simple API in Flask so that I can easily make a call to 
 The model uses HuggingFaces dataset [amazon-reviews-multi](https://huggingface.co/datasets/amazon_reviews_multi/viewer/en/train) for training. The training is done in Python with the help of a few libraries like sklearn, torch, transformers, numpy and optuna. For the API I used Python with Flask. To know more about the training please refer to the document (COMING SOON).
 
 ## Using
-There will be a dockerfile later here but currently you can run the application as follows: <br />
+TODO:
+There will be a dockerfile (also instructions to run the whole app locally in the main document) later here but currently you can run the application as follows: <br />
 Before using you need to install the following with pip in the command line:
 ```
 pip install flask

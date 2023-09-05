@@ -16,8 +16,11 @@ class Review(Resource):
         except:
             return 'bad request', 400;
 
+        try:
             # get ratings for reviews and also most common words.
-        res = getReviews(reviews);
+            res = getReviews(reviews);
+        except:
+            return 'failed whilst calculating reviews', 403;
 
         return res;
         

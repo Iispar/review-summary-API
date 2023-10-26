@@ -24,7 +24,7 @@ def getTopWords(reviews):
 
 def get_tfidf_top_features(documents,n_top=5):
   # load the vectorizer.
-  vectorizer = TfidfVectorizer(max_df=0.95, min_df=2,  stop_words='english')
+  vectorizer = TfidfVectorizer(max_df=0.95, min_df=2,  stop_words='english', ngram_range=(2,2))
   # fit the vectorizer with our reviews
   tfidf = vectorizer.fit_transform(documents)
   # get the words values and sort them to descending 

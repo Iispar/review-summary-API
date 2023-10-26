@@ -25,6 +25,9 @@ Then I created a really simple API in Flask so that I can easily make a call to 
 You will need to have Python installed. You will need the API key for the huggingface model from me. Please contact me so I can give you this and all other secret keys with instructions on using them.
 
 ## Using
+
+The API might need a bit of time to wake up so don't mind if the first rate calls don't work, just try again.
+
 ### Docker
 If you want to use Docker you just need to have docker installed. Then run the following in the folder that has the
 dockerfile  ```docker build --tag api .```. And after this just run ```docker run -p 8080:5000 api``` and the application

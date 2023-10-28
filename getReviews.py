@@ -7,11 +7,13 @@ API_URL = "https://api-inference.huggingface.co/models/Iiro/bert_reviews"
 headers = {"Authorization": os.getenv('AUTHORIZATION')}
 
 def getReviews(reviews):
-    try:
+    # cuts the reviews to max len of 512 for BERT
+    cutReviews = [];
+    for item in reviews:
+        cutReviews.append(item[:512]);
         # calculate the stars
-        stars = requests.post(API_URL, headers=headers, json=reviews).json()
-    except:
-        raise Exception('Pipeline Failed')
+    stars = requests.post(API_URL, headers=headers, json=cutReviews).json()
+    print(stars);
     
     try:
         # create a response from the data

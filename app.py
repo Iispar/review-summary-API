@@ -30,9 +30,12 @@ class Rate(Resource):
             reviews = request.json['reviews'];
         except:
             return 'bad request', 400;
+        try:
 
             # get pos and neg reviews as res.
-        res = getTopWords(reviews);
+            res = getTopWords(reviews);
+        except:
+            return 'Fail whilst calculating top words', 404;
         return res;
 
 api.add_resource(Review, '/rate')

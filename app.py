@@ -17,7 +17,7 @@ class Review(Resource):
             return 'bad request', 400;
 
         
-            # get ratings for reviews and also most common words.
+        # get ratings for reviews and also most common words.
         res = getReviews(reviews);
 
         return res;
@@ -30,12 +30,9 @@ class Rate(Resource):
             reviews = request.json['reviews'];
         except:
             return 'bad request', 400;
-        try:
 
             # get pos and neg reviews as res.
-            res = getTopWords(reviews);
-        except:
-            return 'Fail whilst calculating top words', 404;
+        res = getTopWords(reviews);
         return res;
 
 api.add_resource(Review, '/rate')

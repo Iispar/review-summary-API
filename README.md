@@ -38,13 +38,13 @@ should start and be accessable from http://127.0.0.1:8080
 You can also run the application as follows: <br />
 Before using you need to install the following with pip in the command line:
 ```
-pip install flask
-pip install flask-restful
-pip install scikit-learn
-pip install requests
-pip install python-dotenv
+pip3 install flask
+pip3 install flask-restful
+pip3 install scikit-learn
+pip3 install requests
+pip3 install python-dotenv
 ```
-The usage of the app after this should be really simple. Just clone the repository and run the app.py file or from the command line run ```flask run``` and it opens the API locally. There is a test file test.rest that can be used to make a API call to the API. Just make sure the address is correct!
+The usage of the app after this should be really simple. Just clone the repository and run the app.py file or from the command line run ```python3 -m flask run``` and it opens the API locally. There is a test file test.rest that can be used to make a API call to the API. Just make sure the address is correct!
 
 ## Technologies
 

@@ -8,7 +8,7 @@ Backend for the reviews application. Other repositories:
 
 ## About this project
 
-This is the API for my reviews application. It includes the training of my two models and a small Flask API that I created so that I can call the model from the backend. The API also includes top word calculation with TF-IDF and returns the top most important words / word pairs.
+This is the API for my reviews application. It includes the training of my two models and a small Flask API that I created so that I can call the model from the backend. The API also includes top word calculation with TF-IDF and returns the top most important words/word pairs.
 
 **!! For a detailed look at the whole project and also this API please refer to the document in the frontend github that was created for the college course.!!**
 
@@ -29,8 +29,8 @@ You will need to have Python installed. You will need the API key for the huggin
 The API might need a bit of time to wake up so don't mind if the first rate calls don't work, just try again.
 
 ### Docker
-If you want to use Docker you just need to have docker installed. Then run the following in the folder that has the
-dockerfile  ```docker build --tag api .```. And after this just run ```docker run -p 8080:5000 api``` and the application
+If you want to use Docker you just need to have Docker installed. Then run the following in the folder that has the
+dockerfile  ```docker build --tag api .```. After this just run ```docker run -p 8080:5000 api``` and the application
 should start and be accessable from http://127.0.0.1:8080
 
 ### Command line
@@ -44,7 +44,7 @@ pip3 install scikit-learn
 pip3 install requests
 pip3 install python-dotenv
 ```
-The usage of the app after this should be really simple. Just clone the repository and run the app.py file or from the command line run ```python3 -m flask run``` and it opens the API locally. There is a test file test.rest that can be used to make a API call to the API. Just make sure the address is correct!
+The usage of the app after this should be really simple. Just clone the repository and run the app.py file or from the command line run ```python3 -m flask run``` and it opens the API locally. There is a test file test.rest that can be used to make an API call to the API. Just make sure the address is correct!
 
 ## Technologies
 
